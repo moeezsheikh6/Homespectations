@@ -1,0 +1,27 @@
+name: Fetch shop images
+on:
+  push:
+    branches: [claude/project-thread-r22ri7]
+    paths: [img-cache/urls.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download images (resized to 1200px wide)
+        run: |
+          mkdir -p img-cache/files
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            sep='?'; case "$url" in *\?*) sep='&';; esac
+            curl -sSfL "${url}${sep}width=1200" -o "img-cache/files/$name" || echo "failed $name"
+          done < img-cache/urls.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add img-cache/files
+          git commit -m "Cache shop images for homepage design" || exit 0
+          git push
