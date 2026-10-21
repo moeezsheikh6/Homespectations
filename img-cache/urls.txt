@@ -1,19 +1,16 @@
-cobb.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/cobb-double-bed-ad.jpg?v=1792185066
-p1.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1682662045247-3740fa9f51c6.jpg?v=1791972896
-p2.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1768946025583-e14caf0d9edd.jpg?v=1791972890
-p3.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1768946052308-67ed22a8d7d4.jpg?v=1791972890
-p4.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1761330440315-7550eb161354.jpg?v=1791972888
-p5.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1686510347470-0e36eb055a30.jpg?v=1791971726
-p6.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1721743141802-f01a0437c19b.jpg?v=1791971725
-p7.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1684165610413-2401399e0e59.jpg?v=1791971030
-p8.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1778141304044-455803e12610.jpg?v=1791971024
-p9.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1690598996869-f4e225befb5d.jpg?v=1791971020
-p10.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1721521901513-470a9fdc92b2.jpg?v=1791971016
-p11.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1768946131549-f03cafef7bc1.jpg?v=1791971011
-hero.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Website_Banner_copy.jpg?v=1734856843
-w1.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1682662046426-f7589013d25e.jpg?v=1791972896
-w2.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1784653547541-5be1b6746004.jpg?v=1791972893
-w3.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1721521907443-4f2ec69a45f8.jpg?v=1791971726
-w4.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1723257131566-c331ac692297.jpg?v=1791971022
-chester.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/chester-sofa-set.jpg?v=1791962576
-jahez.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/complete-jahez-home-bundle.jpg?v=1791921235
+t-bed.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Bed.webp
+t-couch.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Couch.webp
+t-tv.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/TV_Console.jpg
+t-scb.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Sofa_CumBeds.jpg
+t-cab.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Cabinets.webp
+t-chairs.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Chairs.webp
+t-shoe.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Shoes_Rack.webp
+t-side.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Side_Tables.webp
+b-furn.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Furniture_new.webp
+b-decor.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/Decor_new.webp
+wed-victoria.png https://cdn.shopify.com/s/files/1/0707/6397/0800/files/3_1.png?v=1757500649
+wed-newlywed.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/newlywed-lounge-starter.jpg?v=1791921989
+full-w4.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1723257131566-c331ac692297.jpg?v=1791971022 2500
+full-p9.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1690598996869-f4e225befb5d.jpg?v=1791971020 2500
+full-w1.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1682662046426-f7589013d25e.jpg?v=1791972896 2500
+full-p8.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/photo-1778141304044-455803e12610.jpg?v=1791971024 2500

@@ -13,10 +13,10 @@ jobs:
       - name: Download images (resized to 1200px wide)
         run: |
           mkdir -p img-cache/files
-          while read -r name url; do
+          while read -r name url w; do
             [ -z "$name" ] && continue
             sep='?'; case "$url" in *\?*) sep='&';; esac
-            curl -sSfL "${url}${sep}width=1200" -o "img-cache/files/$name" || echo "failed $name"
+            curl -sSfL "${url}${sep}width=${w:-1200}" -o "img-cache/files/$name" || echo "failed $name"
           done < img-cache/urls.txt
       - name: Commit
         run: |
