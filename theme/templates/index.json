@@ -229,7 +229,11 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
-      }
+      },
+      "custom_css": [
+        "@media (max-width: 767px) {.grouped_btn--slider {display: flex !important; flex-wrap: nowrap !important; justify-content: center; gap: 10px;} .grouped_btn--slider > div {flex: 0 1 150px;} .grouped_btn--slider .slide-button {min-width: 0 !important; width: 150px; max-width: 100%; margin: 0 !important; padding-left: 8px; padding-right: 8px;}}",
+        ".grouped_btn--slider .slide-button[href*='beds'] {background: #fff !important; color: #232323 !important; border: 1px solid #232323 !important;}"
+      ]
     },
     "video_block_A9aiwd": {
       "type": "video-block",
