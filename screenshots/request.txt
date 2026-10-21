@@ -1,2 +1,2 @@
-new-mobile https://homespectations.pk/?preview_theme_id=167226605808&v=6 mobile
-new-desktop https://homespectations.pk/?preview_theme_id=167226605808&v=6 desktop
+live-mobile https://homespectations.pk/?v=live1 mobile
+live-desktop https://homespectations.pk/?v=live1 desktop
