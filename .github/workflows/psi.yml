@@ -1,0 +1,31 @@
+name: PageSpeed Insights
+on:
+  push:
+    branches: [claude/project-thread-tdv1sk]
+    paths: [psi/request.txt]
+permissions:
+  contents: write
+jobs:
+  psi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query PSI (mobile)
+        run: |
+          stamp=$(date -u +%Y%m%d-%H%M); dir=psi/results/$stamp; mkdir -p $dir
+          while read -r name url; do
+            case "$name" in ""|\#*) continue;; esac
+            for i in 1 2 3; do
+              curl -s --max-time 120 "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1],safe=""))' "$url")" -o $dir/$name-$i.json
+              python3 -c "import json,sys;d=json.load(open(sys.argv[1]));lh=d.get('lighthouseResult',{});a=lh.get('audits',{});m=lambda k:round(a[k]['numericValue']) if k in a else None;print(sys.argv[2],round(lh.get('categories',{}).get('performance',{}).get('score',0)*100) if lh else d.get('error',{}).get('message','')[:100],m('first-contentful-paint'),m('largest-contentful-paint'),m('total-blocking-time'),sep=',')" $dir/$name-$i.json $name >> $dir/runs.csv || true
+              sleep 5
+            done
+          done < psi/request.txt
+          cat $dir/runs.csv
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add psi/results
+          git commit -m "PSI results" || exit 0
+          git pull --rebase && git push
