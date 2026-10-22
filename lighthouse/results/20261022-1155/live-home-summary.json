@@ -1,0 +1,114 @@
+{
+ "url": "https://homespectations.pk/",
+ "score": 43,
+ "FCP": 4177,
+ "LCP": 11198,
+ "TBT": 816,
+ "CLS": "0.000",
+ "SI": 5576,
+ "TTFB": 18,
+ "totalKB": 2086,
+ "requests": 219,
+ "domSize": 2972,
+ "lcpElement": [
+  "{\"type\":\"table\",\"headings\":[{\"key\":\"node\",\"valueType\":\"node\",\"label\":\"Element\"}],\"items\":[{\"node\":{\"type\":\"node\",\"lhId\":\"page-0-IMG\",\"path\":\"1,HTML,1,BODY,0,DIV,11,MAIN,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,0,A,0,IMG\",\"selector\":\"div.images-contain > div.adaptive_height > a.slide-image > img\",\"boundingRect\":{\"top\":98,\"bottom\":372,\"left\":0,\"right\":412,\"width\":412,\"height\":275},\"snippet\":\"<img s",
+  "{\"type\":\"table\",\"headings\":[{\"key\":\"phase\",\"valueType\":\"text\",\"label\":\"Phase\"},{\"key\":\"percent\",\"valueType\":\"text\",\"label\":\"% of LCP\"},{\"key\":\"timing\",\"valueType\":\"ms\",\"label\":\"Timing\"}],\"items\":[{\"phase\":\"TTFB\",\"timing\":622.819,\"percent\":\"6%\"},{\"phase\":\"Load Delay\",\"timing\":1314.7918748893928,\"percent\":\"12%\"},{\"phase\":\"Load Time\",\"timing\":129.08718497804034,\"percent\":\"1%\"},{\"phase\":\"Render Delay\""
+ ],
+ "mainThreadBreakdown": [
+  "Script Evaluation: 2502ms",
+  "Other: 1884ms",
+  "Style & Layout: 1317ms",
+  "Rendering: 475ms",
+  "Script Parsing & Compilation: 289ms",
+  "Parse HTML & CSS: 225ms",
+  "Garbage Collection: 43ms"
+ ],
+ "thirdParties": [
+  "Facebook: 209KB, main-thread 259ms, blocking 155ms",
+  "Google Tag Manager: 155KB, main-thread 182ms, blocking 121ms",
+  "Shopify: 183KB, main-thread 850ms, blocking 119ms",
+  "carthike.com: 11KB, main-thread 16ms, blocking 0ms",
+  "shop.app: 4KB, main-thread 0ms, blocking 0ms",
+  "merchant-center-analytics.goog: 1KB, main-thread 0ms, blocking 0ms",
+  "Judge.me: 0KB, main-thread 0ms, blocking 0ms"
+ ],
+ "renderBlocking": [
+  "https://homespectations.pk/cdn/shop/t/8/assets/vendor.js?v=37601539231953232631792663237 46KB 300ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/component-quick-cart.css?v=63370866881490003141792663187 4KB 150ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/component-card.css?v=118585521889467791381792663156 9KB 300ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/component-menu-mobile.css?v=179724455451347931991792663177 4KB 150ms",
+  "https://cdn.shopify.com/extensions/01a14ec2-8f61-7410-a60f-0bb931db1766/whatflow-113/assets/whatsapp_chat_button.css 3KB 763ms"
+ ],
+ "bootupTime": [
+  "https://homespectations.pk/: total 1994ms script 143ms",
+  "Unattributable: total 926ms script 39ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/lazysizes.min.js?v=122719776364282065531792663220: total 758ms script 210ms",
+  "https://cdn.shopify.com/extensions/01a1633d-73ee-70fc-b519-89eab14f0a51/judgeme-813/assets/loader.js: total 733ms script 617ms",
+  "https://homespectations.pk/cdn/wpm/b49d3b31aw169a7c20pfc9cb2c9m68241e55m.js: total 689ms script 491ms",
+  "https://homespectations.pk/cdn/shop/t/8/compiled_assets/scripts.js?v=164946868324760906551792663308: total 235ms script 9ms",
+  "https://www.googletagmanager.com/gtag/js?id=GT-NGMV5Q9V: total 182ms script 147ms",
+  "https://connect.facebook.net/en_US/fbevents.js: total 141ms script 106ms",
+  "https://homespectations.pk/cdn/s/trekkie.storefront.6efba1340ec6769622eb0d10b5cb070d43fb8d55.min.js: total 141ms script 118ms",
+  "https://connect.facebook.net/signals/config/335675412699747?v=2.9.427&r=stable&domain=homespectations.pk&im=1&hme=766752a074f0cb0756dd3275a46fdecbcfe3de1ab8f573546734b619e44d384f&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C274%2C273%2C272%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C324%2C325%2C326%2C323%2C340%2C362%2C248%2C237%2C70%2C238%2C236%2C365%2C356%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189: total 118ms script 83ms",
+  "https://homespectations.pk/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.11.0.min.js: total 104ms script 89ms",
+  "https://homespectations.pk/web-pixels@49d3b31aw169a7c20pfc9cb2c9m68241e55/app/web-pixel-2899280112@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js: total 63ms script 60ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/theme.js?v=126057784597542133141792663234: total 58ms script 33ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/predictive-search.js?v=16579742612086828001792663223: total 57ms script 6ms",
+  "https://homespectations.pk/cdn/shop/t/8/assets/vendor.js?v=37601539231953232631792663237: total 54ms script 39ms"
+ ],
+ "unusedJS": [
+  "https://www.googletagmanager.com/gtag/js?id=GT-NGMV5Q9V: 69KB unused of 154KB",
+  "https://connect.facebook.net/en_US/fbevents.js: 38KB unused of 112KB",
+  "https://homespectations.pk/cdn/wpm/b49d3b31aw169a7c20pfc9cb2c9m68241e55m.js: 37KB unused of 82KB",
+  "https://homespectations.pk/cdn/shop/t/8/assets/vendor.js?v=37601539231953232631792663237: 32KB unused of 45KB",
+  "https://connect.facebook.net/signals/config/335675412699747?v=2.9.427&r=stable&domain=homespectations.pk&im=1&hme=766752a074f0cb0756dd3275a46fdecbcfe3de1ab8f573546734b619e44d384f&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C274%2C273%2C272%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C324%2C325%2C326%2C323%2C340%2C362%2C248%2C237%2C70%2C238%2C236%2C365%2C356%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189: 32KB unused of 96KB",
+  "https://homespectations.pk/cdn/shop/t/8/assets/theme.js?v=126057784597542133141792663234: 28KB unused of 32KB"
+ ],
+ "unusedCSS": [
+  "https://homespectations.pk/cdn/shop/t/8/assets/base.css?v=158851784076757112611792663145: 16KB unused of 20KB",
+  "https://cdn.shopify.com/extensions/01a1633d-73ee-70fc-b519-89eab14f0a51/judgeme-813/assets/widget_v3_base.css: 10KB unused of 11KB"
+ ],
+ "images": [
+  "uses-responsive-images: 0KB",
+  "offscreen-images: 18KB",
+  "modern-image-formats: 0KB",
+  "uses-optimized-images: 0KB"
+ ],
+ "imageItems": [],
+ "offscreen": [
+  "https://homespectations.pk/cdn/shop/files/hs-hero-desktop.jpg?v=1792610945&width=740 16KB",
+  "https://homespectations.pk/cdn/shop/files/homespectations-logo-new.png?v=1734980785&width=300 2KB"
+ ],
+ "biggest": [
+  "181KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.Ixe7cPHu.js",
+  "155KB Script https://www.googletagmanager.com/gtag/js?id=GT-NGMV5Q9V",
+  "112KB Script https://connect.facebook.net/en_US/fbevents.js",
+  "97KB Script https://connect.facebook.net/signals/config/335675412699747?v=2.9.427&r=stable&domain=homespectations.pk&im=1&hme=766752a074f0cb0756dd3275a46fdecbcfe3de1ab8f573",
+  "92KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.Cv25yOlM.js",
+  "86KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/3d539943.B0afKbDd.js",
+  "83KB Script https://homespectations.pk/cdn/wpm/b49d3b31aw169a7c20pfc9cb2c9m68241e55m.js",
+  "79KB Document https://homespectations.pk/",
+  "75KB Image https://homespectations.pk/cdn/shop/files/hs-hero-mobile-wide.jpg?v=1792611332&width=750",
+  "47KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.CycFD9pT.js",
+  "46KB Script https://homespectations.pk/cdn/shop/t/8/assets/vendor.js?v=37601539231953232631792663237",
+  "45KB XHR https://cdn.shopify.com/extensions/01a1633d-73ee-70fc-b519-89eab14f0a51/judgeme-813/assets/widget_base.js",
+  "40KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.BVenuQSY.js",
+  "33KB Script https://homespectations.pk/cdn/shop/t/8/assets/theme.js?v=126057784597542133141792663234",
+  "32KB Script https://homespectations.pk/cdn/s/trekkie.storefront.6efba1340ec6769622eb0d10b5cb070d43fb8d55.min.js",
+  "31KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.BwbzfI6P.js",
+  "30KB Document https://homespectations.pk/web-pixels@49d3b31aw169a7c20pfc9cb2c9m68241e55/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+  "29KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/fb3b4968.CBmKsErY.js",
+  "27KB Script https://homespectations.pk/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.11.0.min.js",
+  "27KB Other https://cdn.shopify.com/extensions/01a1633d-73ee-70fc-b519-89eab14f0a51/judgeme-813/assets/widget_form.js",
+  "25KB Script https://homespectations.pk/cdn/shopifycloud/storefront/assets/storefront/webmcp-23c12384.js",
+  "25KB Other https://homespectations.pk/web-pixels/strict/app/web-pixel-2697920752@42cd9b1f0fb7c1cae5cd21175cef6782.js",
+  "24KB Other https://cdn.shopify.com/extensions/01a1633d-73ee-70fc-b519-89eab14f0a51/judgeme-813/assets/widget_others.js",
+  "22KB Other https://homespectations.pk/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.CiNciCW6.js",
+  "21KB Stylesheet https://homespectations.pk/cdn/shop/t/8/assets/base.css?v=158851784076757112611792663145"
+ ],
+ "fonts": [],
+ "lcpPhases": [
+  "{\"type\":\"table\",\"headings\":[{\"key\":\"label\",\"valueType\":\"text\",\"label\":\"Subpart\"},{\"key\":\"duration\",\"valueType\":\"ms\",\"label\":\"Duration\"}],\"items\":[{\"subpart\":\"timeToFirstByte\",\"label\":\"Time to first byte\",\"duration\":36.358},{\"subpart\":\"resourceLoadDelay\",\"label\":\"Resource load delay\",\"duration\":309.522},{\"subpart\":\"resourceLoadDuration\",\"label\":\"Resource load duration\",\"duration\":91.852},{\"subpart\":\"elementRenderDelay\",\"label\":\"Element render delay\",\"duration\":1934.073}]}",
+  "{\"type\":\"node\",\"lhId\":\"page-0-IMG\",\"path\":\"1,HTML,1,BODY,0,DIV,11,MAIN,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,0,A,0,IMG\",\"selector\":\"div.images-contain > div.adaptive_height > a.slide-image > img\",\"boundingRect\":{\"top\":98,\"bottom\":372,\"left\":0,\"right\":412,\"width\":412,\"height\":275},\"snippet\":\"<img srcset=\\\"//homespectations.pk/cdn/shop/files/hs-hero-mobile-wide.jpg?v=1792611332&amp;w…\\\" sizes=\\\"100vw\\\" src=\\\"//homespectations.pk/cdn/shop/files/hs-hero-mobile-wide.jpg?v=1792611332&amp;w…\\\" alt=\\\"Living room with a beige modular sofa\\\" width=\\\"1200\\\" height=\\\"800\\\">\",\"nodeLabel\":\"Living room w"
+ ]
+}
