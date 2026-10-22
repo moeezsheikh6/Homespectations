@@ -1,0 +1,3 @@
+home https://homespectations.pk/
+collection https://homespectations.pk/collections/beds
+product https://homespectations.pk/products/inara-double-bed

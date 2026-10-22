@@ -1,0 +1,30 @@
+name: Fetch page HTML
+on:
+  push:
+    branches: [claude/project-thread-tdv1sk]
+    paths: [html/request.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: |
+          mkdir -p html/out
+          while read -r name url; do
+            case "$name" in ""|\#*) continue;; esac
+            curl -sL -A "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36" "$url" -o "html/out/$name.html"
+            echo "$name $(wc -c < html/out/$name.html)"
+          done < html/request.txt
+          # also grab theme assets referenced, for inspection
+          grep -ohE '//homespectations\.pk/cdn/shop/t/[0-9]+/assets/[a-zA-Z0-9._-]+\.(js|css)' html/out/*.html | sort -u | while read -r u; do
+            curl -sL "https:$u" -o "html/out/asset-$(basename $u)"; done
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add html/out
+          git commit -m "Fetched page HTML" || exit 0
+          git pull --rebase && git push
