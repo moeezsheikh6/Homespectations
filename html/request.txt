@@ -1,3 +1,2 @@
-home https://homespectations.pk/
-collection https://homespectations.pk/collections/beds
-product https://homespectations.pk/products/inara-double-bed
+speed-home https://homespectations.pk/?preview_theme_id=167233093872
+speed-product https://homespectations.pk/products/inara-double-bed?preview_theme_id=167233093872

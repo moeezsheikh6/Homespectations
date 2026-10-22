@@ -1,4 +1,6 @@
-home https://homespectations.pk/
-collection https://homespectations.pk/collections/beds
-product https://homespectations.pk/products/inara-double-bed
-# run 2
+old-home https://homespectations.pk/?preview_theme_id=167226605808
+new-home https://homespectations.pk/?preview_theme_id=167233093872
+old-collection https://homespectations.pk/collections/beds?preview_theme_id=167226605808
+new-collection https://homespectations.pk/collections/beds?preview_theme_id=167233093872
+old-product https://homespectations.pk/products/inara-double-bed?preview_theme_id=167226605808
+new-product https://homespectations.pk/products/inara-double-bed?preview_theme_id=167233093872
