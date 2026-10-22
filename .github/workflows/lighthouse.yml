@@ -25,13 +25,7 @@ jobs:
               npx -y lighthouse@12.8.2 "$url" --only-categories=performance --output=json --output-path=$dir/$name-$i.json \
                 --chrome-flags="--headless=new --no-sandbox" --quiet || true
             done
-            node -e '
-              const fs=require("fs");const [d,n]=process.argv.slice(1);
-              const runs=[...Array(+process.env.RUNS||3).keys()].map(i=>i+1).map(i=>`${d}/${n}-${i}.json`).filter(f=>fs.existsSync(f)).map(f=>[f,JSON.parse(fs.readFileSync(f)).categories.performance.score]);
-              const rows=runs.map(([f])=>{const r=JSON.parse(fs.readFileSync(f));const a=r.audits;return [n,Math.round(r.categories.performance.score*100),...['first-contentful-paint','largest-contentful-paint','total-blocking-time','speed-index'].map(k=>Math.round(a[k].numericValue))].join(',')});fs.appendFileSync(`${d}/runs.csv`,rows.join('\n')+'\n');
-              runs.sort((a,b)=>a[1]-b[1]); const med=runs[Math.floor(runs.length/2)][0];
-              fs.copyFileSync(med,`${d}/${n}.json`); runs.forEach(r=>fs.unlinkSync(r[0])); console.log(n, runs.map(r=>r[1]));
-            ' $dir $name
+            node lighthouse/median.js $dir $name $RUNS
             node lighthouse/summarize.js $dir/$name.json > $dir/$name-summary.json
           done < lighthouse/request.txt
       - name: Commit

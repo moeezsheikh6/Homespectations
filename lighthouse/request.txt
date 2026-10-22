@@ -5,3 +5,4 @@ old-product https://homespectations.pk/products/inara-double-bed?preview_theme_i
 new-product https://homespectations.pk/products/inara-double-bed?preview_theme_id=167233093872
 old-home https://homespectations.pk/?preview_theme_id=167226605808
 new-home https://homespectations.pk/?preview_theme_id=167233093872
+# retry
