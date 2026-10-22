@@ -18,9 +18,9 @@ jobs:
           stamp=$(date -u +%Y%m%d-%H%M)
           dir=lighthouse/results/$stamp; mkdir -p $dir
           while read -r name url; do
-            [ -z "$name" ] && continue
+            case "$name" in ""|\#*) continue;; esac
             for i in 1 2 3; do
-              npx -y lighthouse@12.2.1 "$url" --only-categories=performance --output=json --output-path=$dir/$name-$i.json \
+              npx -y lighthouse@12.8.2 "$url" --only-categories=performance --output=json --output-path=$dir/$name-$i.json \
                 --chrome-flags="--headless=new --no-sandbox" --quiet || true
             done
             node -e '
