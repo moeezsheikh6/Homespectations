@@ -13,19 +13,22 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
-      - name: Run Lighthouse (mobile, 3 runs per page, keep median)
+      - name: Run Lighthouse (mobile, several runs per page, keep median)
+        env:
+          RUNS: 5
         run: |
           stamp=$(date -u +%Y%m%d-%H%M)
           dir=lighthouse/results/$stamp; mkdir -p $dir
           while read -r name url; do
             case "$name" in ""|\#*) continue;; esac
-            for i in 1 2 3; do
+            for i in $(seq 1 ${RUNS:-3}); do
               npx -y lighthouse@12.8.2 "$url" --only-categories=performance --output=json --output-path=$dir/$name-$i.json \
                 --chrome-flags="--headless=new --no-sandbox" --quiet || true
             done
             node -e '
               const fs=require("fs");const [d,n]=process.argv.slice(1);
-              const runs=[1,2,3].map(i=>`${d}/${n}-${i}.json`).filter(f=>fs.existsSync(f)).map(f=>[f,JSON.parse(fs.readFileSync(f)).categories.performance.score]);
+              const runs=[...Array(+process.env.RUNS||3).keys()].map(i=>i+1).map(i=>`${d}/${n}-${i}.json`).filter(f=>fs.existsSync(f)).map(f=>[f,JSON.parse(fs.readFileSync(f)).categories.performance.score]);
+              const rows=runs.map(([f])=>{const r=JSON.parse(fs.readFileSync(f));const a=r.audits;return [n,Math.round(r.categories.performance.score*100),...['first-contentful-paint','largest-contentful-paint','total-blocking-time','speed-index'].map(k=>Math.round(a[k].numericValue))].join(',')});fs.appendFileSync(`${d}/runs.csv`,rows.join('\n')+'\n');
               runs.sort((a,b)=>a[1]-b[1]); const med=runs[Math.floor(runs.length/2)][0];
               fs.copyFileSync(med,`${d}/${n}.json`); runs.forEach(r=>fs.unlinkSync(r[0])); console.log(n, runs.map(r=>r[1]));
             ' $dir $name
