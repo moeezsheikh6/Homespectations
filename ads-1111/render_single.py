@@ -3,9 +3,10 @@
 Usage: python3 render_single.py <fonts_dir> <out_dir> <photo> <name> <price> <slug>
 """
 import os, sys
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageFilter
 
 FONTS, OUT, PHOTO, NAME, PRICE, SLUG = sys.argv[1:7]
+MODE = sys.argv[7] if len(sys.argv) > 7 else "room"
 PRICE = int(PRICE)
 BRASS = (214, 172, 98)
 WHITE = (255, 255, 255)
@@ -28,8 +29,58 @@ def gradient(W, H, y0, y1, max_a, up=False):
     return g.resize((W, H))
 
 
+def studio(W, H, story):
+    """Warm wall + floor scene with the product cut out from its white background."""
+    wall_top, wall_bot = (88, 78, 66), (150, 136, 116)
+    floor_y = int(H * (0.66 if not story else 0.62))
+    bg = Image.new("RGB", (W, H))
+    d = ImageDraw.Draw(bg)
+    for y in range(floor_y):
+        t = y / floor_y
+        d.line([(0, y), (W, y)], fill=tuple(int(a + (b - a) * t) for a, b in zip(wall_top, wall_bot)))
+    for y in range(floor_y, H):
+        t = (y - floor_y) / (H - floor_y)
+        d.line([(0, y), (W, y)], fill=tuple(int(a + (b - a) * t) for a, b in zip((118, 92, 66), (60, 44, 32))))
+    # soft light pool on the wall
+    glow = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(glow).ellipse((W * 0.1, H * 0.1, W * 0.9, floor_y * 1.05), fill=70)
+    bg = Image.composite(Image.new("RGB", (W, H), (205, 190, 166)), bg, glow.filter(ImageFilter.GaussianBlur(160)))
+    src = Image.open(PHOTO).convert("RGB")
+    lum = src.convert("L")
+    mask = lum.point(lambda v: 0 if v > 200 else (255 if v < 170 else int((200 - v) / 30 * 255)))
+    # drop the neutral grey floor shadow baked into the photo (sofa leather is warm, shadow is grey)
+    hsv = src.convert("HSV")
+    _, sat, val = hsv.split()
+    grey = Image.merge("RGB", (sat, val, val)).point(lambda v: v)
+    m2 = Image.new("L", src.size, 255)
+    sp, vp, mp = sat.load(), val.load(), m2.load()
+    for y in range(src.height):
+        for x in range(src.width):
+            if vp[x, y] > 95 and sp[x, y] < 40:
+                mp[x, y] = 0
+    from PIL import ImageChops
+    mask = ImageChops.multiply(mask, m2).filter(ImageFilter.MedianFilter(5)).filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.MinFilter(15)).filter(ImageFilter.MinFilter(3))
+    bb = mask.point(lambda v: 255 if v > 40 else 0).getbbox()
+    src, mask = src.crop(bb), mask.crop(bb)
+    # clear stray floor bits between the outer legs
+    ImageDraw.Draw(mask).rectangle((int(mask.width * 0.15), int(mask.height * 0.845), int(mask.width * 0.85), mask.height), fill=0)
+    pw = int(W * 0.94)
+    ph = int(src.height * pw / src.width)
+    src = src.resize((pw, ph), Image.LANCZOS)
+    mask = mask.resize((pw, ph), Image.LANCZOS).filter(ImageFilter.GaussianBlur(0.8))
+    px, py = (W - pw) // 2, floor_y + int((H - floor_y) * 0.18) - ph
+    sh = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(sh).ellipse((px + pw * 0.04, py + ph - 26, px + pw * 0.96, py + ph + 30), fill=170)
+    bg = Image.composite(Image.new("RGB", (W, H), (25, 18, 12)), bg, sh.filter(ImageFilter.GaussianBlur(22)))
+    bg.paste(src, (px, py), mask)
+    return bg
+
+
 def render(W, H, out):
     story = H >= 1900
+    if MODE == "studio":
+        im = studio(W, H, story)
+        return finish(im, W, H, story, out)
     im = Image.open(PHOTO).convert("RGB")
     bb = im.convert("L").point(lambda v: 255 if v < 245 else 0).getbbox()
     im = im.crop(bb)
@@ -41,6 +92,10 @@ def render(W, H, out):
         im = canvas
     else:
         im = ImageOps.fit(im, (W, H), Image.LANCZOS, centering=(0.5, 1.0))
+    return finish(im, W, H, story, out)
+
+
+def finish(im, W, H, story, out):
     dark = Image.new("RGB", (W, H), (12, 12, 12))
     im = Image.composite(dark, im, gradient(W, H, H // 2, H, 225))
     im = Image.composite(dark, im, gradient(W, H, 0, 300 + (200 if story else 0), 150, up=True))
