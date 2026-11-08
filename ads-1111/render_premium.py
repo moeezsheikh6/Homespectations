@@ -74,7 +74,8 @@ def render(slug, photo, cat, head, centering, W=1080, H=1350):
     # big 11.11 mark, right of the headline
     nf = ImageFont.truetype(os.path.join(FONTS, "DMSerifDisplay-Regular.ttf"), 128)
     d.text((W - m, ty + 132), "11.11", font=nf, fill=BRASS, anchor="rs")
-    spaced(d, (W - m, ty + 146), "SALE", f("Manrope.ttf", 22, 700), INK, 10, anchor="r")
+    offer = os.environ.get("OFFER", "")
+    spaced(d, (W - m, ty + 146), offer or "SALE", f("Manrope.ttf", 22, 700), INK, 6 if offer else 10, anchor="r")
     sf = f("Manrope.ttf", 25, 500)
     d.text((m, H - 74), "Built to order  ·  Delivered across Pakistan", font=sf, fill=MUTED, anchor="ls")
     cf = f("Manrope.ttf", 25, 700)
