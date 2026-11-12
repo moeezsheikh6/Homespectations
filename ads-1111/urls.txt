@@ -52,3 +52,6 @@ delomo-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/WhatsAppIm
 sapphire-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/ShapphireDeewan.jpg?v=1757500498 1600
 chester3-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/71_166c2529-55d6-44b3-8555-f9e74f2f2a21.jpg?v=1772486115 1600
 collory2-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/genuine-leather-couch55027852677.webp?v=1757501840 1600
+tasman-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/1700_11_496211_Silo.jpg?v=1757501818 1600
+as015-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/IMG-20220930-WA0047.jpg?v=1757501676 1600
+juno-web.png https://cdn.shopify.com/s/files/1/0707/6397/0800/files/101_16ba1b8e-c8b1-4e47-b4bc-f8cc1f78e2c4.png?v=1757500822 1600
