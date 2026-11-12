@@ -18,6 +18,14 @@ ADS = [
     ("console-note", "c-note.jpg", "CONSOLES", "Finish\nthe room.", (0.5, 0.6), True),
     ("table-caricara", "caricara-b.jpg", "COFFEE TABLES", "The centre of\nevery evening.", (0.5, 0.5), False),
     ("client-sloan", "sloan-client4.jpg", "DELIVERED TO A CLIENT", "Real home.\nReal furniture.", (0.5, 0.6), True),
+    ("client-sloan-detail", "sloan-client2.jpg", "DELIVERED TO A CLIENT", "Look closer.\nThis is the real one.", (0.5, 0.6), True),
+    ("real-alum-bed", "real/alum.jpg", "MADE IN OUR WORKSHOP", "Built by hand,\nin our own workshop.", "contain", True),
+    ("real-chester", "real/chester.jpg", "MADE IN OUR WORKSHOP", "The real thing.\nNot a render.", "contain", True),
+    ("real-rocking", "real/rocking.jpg", "MADE IN OUR WORKSHOP", "Slow evenings,\ndone right.", "contain", True),
+    ("real-leather", "real/leather.jpg", "MADE IN OUR WORKSHOP", "Fresh off\nthe workshop floor.", "contain", True),
+    ("real-blue-l", "real/bluel.jpg", "MADE IN OUR WORKSHOP", "Your size.\nYour colour.", "contain", True),
+    ("real-floral", "real/floral.jpg", "MADE IN OUR WORKSHOP", "A pair that starts\nconversations.", "contain", True),
+    ("client-sloan-room", "sloan-client1.jpg", "DELIVERED TO A CLIENT", "Not a render.\nA client's living room.", (0.5, 0.7), True),
 ]
 
 
@@ -47,7 +55,11 @@ def render(slug, photo, cat, head, centering, bleed, W=1080, H=1350):
     spaced(d, (W - m, 46), "MADE TO ORDER", f("Manrope.ttf", 22, 600), MUTED, 5, anchor="r")
     py, ph = 104, 800
     src = Image.open(os.path.join(SRC, photo)).convert("RGB")
-    if bleed:
+    if centering == "contain":  # real photo: resize only, never crop
+        pic = src.copy()
+        pic.thumbnail((W - 2 * m, ph), Image.LANCZOS)
+        im.paste(pic, (m + (W - 2 * m - pic.width) // 2, py + (ph - pic.height) // 2))
+    elif bleed:
         pic = ImageOps.fit(src, (W - 2 * m, ph), Image.LANCZOS, centering=centering)
         im.paste(pic, (m, py))
     else:  # product cut-out on white: fit inside a white panel, no cropping
