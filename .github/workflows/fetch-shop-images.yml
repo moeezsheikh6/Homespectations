@@ -16,7 +16,8 @@ jobs:
           while read -r name url w; do
             [ -z "$name" ] && continue
             sep='?'; case "$url" in *\?*) sep='&';; esac
-            curl -sSfL "${url}${sep}width=${w:-1600}" -o "ads-1111/src/$name" || echo "failed $name"
+            if [ "$w" = "0" ]; then u="$url"; else u="${url}${sep}width=${w:-1600}"; fi
+            curl -sSfL "$u" -o "ads-1111/src/$name" || echo "failed $name"
           done < ads-1111/urls.txt
       - name: Commit
         run: |
