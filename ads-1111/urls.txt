@@ -45,3 +45,6 @@ rc001-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/WhatsAppIma
 peninsula-web.png https://cdn.shopify.com/s/files/1/0707/6397/0800/files/11a_0142bfcd-31c3-48b9-9277-99b545aa156e.png?v=1757500970 1600
 danvers-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/3_2cd60404-e177-416e-93f0-fd64a9e5b1cf.jpg?v=1757500473 1600
 birney-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/6_721507a8-2f2f-45de-9cb6-1f9ad01e023f.jpg?v=1757500471 1600
+woodall-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/6_21cfbe9f-0806-4884-aa1e-8be0635b65c6.jpg?v=1757500470 1600
+collory-web.webp https://cdn.shopify.com/s/files/1/0707/6397/0800/files/genuine-leather-couch55027852677.webp?v=1757501840 1600
+kell-web.jpg https://cdn.shopify.com/s/files/1/0707/6397/0800/files/7_b8e0eb6b-da22-42b6-b1ef-ecdb0cc73ca3.jpg?v=1757500469 1600
